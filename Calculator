@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+    
+int main() {
+    float a,b;
+    cout<<"Enter two numbers:- ";
+    cin>>a>>b;
+    
+    char ch;
+    
+    cout<<"Choose an operation:- "<<endl;
+    cout<<"1.Addition"<<endl;
+    cout<<"2.Subtraction"<<endl;
+    cout<<"3.Multiplication"<<endl;
+    cout<<"4.Division"<<endl;
+     cin>>ch;
+    
+    switch(ch)
+    {
+        case '1':
+        cout<<"Addition is "<< a+b;
+        break;
+        
+        case '2':
+        cout<<"Subtraction is "<<a-b;
+        break;
+        
+        case '3':
+        cout<<"Multiplication is "<<a*b;
+        break;
+        
+        case '4':
+        cout<<"Division is "<<a/b;
+        break;
+        
+        default:
+        cout<<"Invalid input!!!!";
+        break;
+    }
+    return 0;
+}
