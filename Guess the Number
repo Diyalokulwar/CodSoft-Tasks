@@ -5,17 +5,17 @@ using namespace std;
   {
       if(a>b)
       {
-          cout<<"Too high!!!"<<endl;
+          cout<<"High!!!"<<endl;
       }
       if(b>a)
       {
-          cout<<"Too low!!!"<<endl;
+          cout<<"Low!!!"<<endl;
       }
   }
     
 int main() {
 
-  int a,b=78;
+  int a,b=61;
   while (a!=b)
   {
   cout<<"Enter a number:- ";
