@@ -1,62 +1,55 @@
 #include <iostream>
 using namespace std;
 
-void display(char board[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        cout << "| ";
-        for (int j = 0; j < 3; j++) {
-            cout << board[i][j] << " | ";
-        }
-        cout << endl;
-    }
-    cout << " " << endl;
+void display(char board[3][3])
+{   for (int i = 0; i < 3; i++)
+ {  cout << "| ";                              //creating a table or a board
+    for (int j = 0; j < 3; j++) { cout << board[i][j] << " | "; }
+        cout<<endl;  }
+    cout << " " <<endl;
 }
 
 bool check(char board[3][3], char player) {
     for (int i = 0; i < 3; i++) {
-        if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
+        if (board[i][0] == player && board[i][1] == player && board[i][2] == player)  //checking for horizontal
             return true;
-        if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
-            return true;
-    }
-    if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
+        if (board[0][i] == player && board[1][i] == player && board[2][i] == player)   //checking for vertical
+            return true;  
+              }
+         if (board[0][0] == player && board[1][1] == player && board[2][2] == player) //checking for diagonal
         return true;
-   else  if (board[2][0] == player && board[1][1] == player && board[0][2] == player)
+        if (board[2][0] == player && board[1][1] == player && board[0][2] == player)  //2nd diagonal
         return true;
     else return false;
 }
 
 int main() {
-    char board[3][3] = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} };
-    char player = 'X';
-
+    char board[3][3] = { {' ',' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} }; //for taking turns
+    char player = 'X'||'O';
     int a, b;
     int turn;
-
-    for (turn = 0; turn < 9; turn++) {
-        cout<<"Board:- "<<endl;
-        display(board);
-        while (true) {
+    for (turn = 0; turn < 9; turn++) {     //dislpay board
+            cout<<"Board:- "<<endl;
+            display(board);
+            while (true) {
             cout << "Player " << player << ", enter row and column: ";
             cin >> a >> b;
             if (a < 0 || a >= 3 || b < 0 || b >= 3 || board[a][b] != ' ') {
-                cout << "Invalid move!!!" << endl;
-            } else {
-                break;
-            }
+                cout << "Invalid move!!!" << endl;       //not possible rows
+            } else {   break;  }    //possible rows 0,1,2
         }
 
-        board[a][b] = player;
-        if (check(board, player)) {
+        board[a][b] = player;     //can be player "X" OR "O"
+        if (check(board, player)) {                        //checking the board
             display(board);
-            cout << "Player " << player << " wins!" << endl;
+            cout << "Player " << player << " wins!" << endl;  //win or tie
             return 0;
         }
-        player = (player == 'X') ? 'O' : 'X';
+        player = (player == 'X') ? 'O' : 'X'; //which player wins
     }
 
     display(board);
-    cout << "It's a Tie!!!" << endl;
+    cout << "It's a Tie!!!" << endl;  //in case both do not win
 
     return 0;
 }
