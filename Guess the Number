@@ -16,14 +16,14 @@ using namespace std;
 int main() {
 
   int a,b=61;
-  while (a!=b)
+  do
   {
   cout<<"Enter a number:- ";
   cin>>a;
   
 check(a,b);
   
-  }
+  }while(a!=b)
   
   cout<<"Congratulations!!! You guessed it right."<<endl;
     return 0;
