@@ -16,25 +16,25 @@ void addTask() {
     cout << "Enter task: ";
     getline(cin, task);
     tasks.push_back({task, false});
-    cout << "Task added successfully!" << endl;
+    cout << "Task added successfully!!!" << endl;
 }
 
-void viewTasks() {
-    if (tasks.empty()) {
+void viewTasks()
+{
+   if (tasks.empty()) 
+   {
         cout << "No tasks found." << endl;
         return;
     }
     cout << "Tasks:" << endl;
-    for (int i = 0; i < tasks.size(); i++) {
-        cout << i + 1 << ". " << tasks[i].description;
-        if (tasks[i].completed) {
-            cout << " (Completed)";
-        }
+    for (int i = 0; i < tasks.size(); i++)
+   {   cout << i + 1 << ". " << tasks[i].description;
+    if (tasks[i].completed) { cout << " (Completed)";  }
         cout << endl;
     }
 }
 
-void markTaskCompleted() {
+void markAsCompleted() {
     int index;
     cout << "Enter task number to mark as completed: ";
     cin >> index;
@@ -43,7 +43,7 @@ void markTaskCompleted() {
         return;
     }
     tasks[index - 1].completed = true;
-    cout << "Task marked as completed." << endl;
+    cout << "Task marked as completed!!" << endl;
 }
 
 void removeTask() {
@@ -51,7 +51,7 @@ void removeTask() {
     cout << "Enter task number to remove: ";
     cin >> index;
     if (index < 1 || index > tasks.size()) {
-        cout << "Invalid task number." << endl;
+        cout << "Invalid task number!!" << endl;
         return;
     }
     tasks.erase(tasks.begin() + index - 1);
@@ -59,38 +59,39 @@ void removeTask() {
 }
 
 int main() {
-    int choice;
+    int ch;
     do {
-        cout << "\nTo-Do List Manager\n";
+        cout << "\nTo-Do List Manager:- "<<endl;
         cout << "1. Add task\n";
         cout << "2. View tasks\n";
         cout << "3. Mark task as completed\n";
         cout << "4. Remove task\n";
         cout << "5. Exit\n";
-        cout << "Enter your choice: ";
-        cin >> choice;
-        cin.ignore(); // Ignore newline character
 
-        switch (choice) {
-            case 1:
+        cout << "Enter your choice:- ";
+        cin >> ch;
+        cin.ignore(); // Ignore newline character that is if userc presses enter button twice or tmore times
+
+        switch (ch)
+      {    case 1:
                 addTask();
                 break;
-            case 2:
+      case 2:
                 viewTasks();
                 break;
-            case 3:
-                markTaskCompleted();
+      case 3:
+                markAsCompleted();
                 break;
-            case 4:
+      case 4:
                 removeTask();
                 break;
-            case 5:
+      case 5:
                 cout << "Exiting..." << endl;
                 break;
-            default:
-                cout << "Invalid choice." << endl;
+     default:
+     cout << "Invalid choice!!!!" << endl;
         }
-    } while (choice != 5);
+    } while (ch != 5);
 
     return 0;
 }
