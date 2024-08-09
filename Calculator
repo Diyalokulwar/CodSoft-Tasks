@@ -1,42 +1,100 @@
 #include <iostream>
 using namespace std;
 
-    
+
 int main() {
-    float a,b;
+    float a,b,c;
     cout<<"Enter two numbers:- ";
     cin>>a>>b;
+
+    char ch1,ch2;
     
-    char ch;
-    
-    cout<<"Choose an operation:- "<<endl;
+do
+  {
+      
+       cout<<"Choose an operation:- "<<endl;
     cout<<"1.Addition"<<endl;
     cout<<"2.Subtraction"<<endl;
     cout<<"3.Multiplication"<<endl;
     cout<<"4.Division"<<endl;
-     cin>>ch;
-    
-    switch(ch)
+    cout<<"5.Exit"<<endl;
+ 
+     cin>>ch1;
+
+    switch(ch1)
     {
         case '1':
         cout<<"Addition is "<< a+b;
         break;
-        
+
         case '2':
         cout<<"Subtraction is "<<a-b;
         break;
-        
+
         case '3':
         cout<<"Multiplication is "<<a*b;
         break;
-        
+
         case '4':
         cout<<"Division is "<<a/b;
         break;
         
+        case '5':
+        cout<<"Exiting......"<<endl;
+        exit;
+
         default:
         cout<<"Invalid input!!!!";
         break;
-    }
+    } }while(ch1<6);
+    
+    cout<<endl;
+cout<<"Enter a number:- ";
+cin>>a;
+  do
+{  
+     cout<<"1.Square"<<endl;
+    cout<<"2.Cube"<<endl;
+    cout<<"3.Exit"<<endl;
+    cout<<"Enter your choice:- ";
+    cin>>ch2;
+
+switch(ch2)
+{
+ case '1':
+ cout<<"Square of "<<a<<" is "<<a*a<<endl;
+ break;
+ 
+case '2':
+cout<<"Cube of "<<a<<" is "<<a*a*a<<endl; 
+break;
+
+case '3':
+cout<<"Exiting!!!!!"<<endl;
+exit;
+
+default:
+cout<<"Invalid power!!!!";
+}
+
+}while(ch2<4);
+
+// int r=1,s=1,p=1;
+// char ch3;
+// cout<<endl;
+// cout<<"Enter two numbers for raise to function:- ";
+// cin>>r,s;
+
+// int i=1;
+// while(i<=s)
+// {
+//   r=r*i;
+//   i++;
+// }
+
+// cout<<"Ans:- "<<r;
+
     return 0;
 }
+
+
